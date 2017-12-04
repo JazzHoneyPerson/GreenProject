@@ -1,6 +1,2 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v141:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0.16299.0
-<<<<<<< HEAD
-Debug|Win32|C:\Users\Имя\GreenProject\Count\|
-=======
-Debug|Win32|C:\Users\nikab\GreenProject\Count\|
->>>>>>> b6e04880240dbaac082924943c56294067e4f21c
+Debug|Win32|C:\Users\Имя\gits\GreenProject\Count\|
