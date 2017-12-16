@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Color.h"
-#include <iostream>
+
 
 using namespace std;
 
@@ -20,4 +20,10 @@ void MyColor::Show()
 int DistanceOfPixels(MyColor First, MyColor Second)
 {
 	return sqrt((First.R - Second.R)*(First.R - Second.R) + (First.G - Second.G)*(First.G - Second.G) + (First.B - Second.B)*(First.B - Second.B));
+}
+void Addition(MyColor &First, MyColor Second)
+{
+	First.R += Second.R;
+	First.G += Second.G;
+	First.B += Second.B;
 }

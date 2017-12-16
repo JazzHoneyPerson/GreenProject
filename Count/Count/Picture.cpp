@@ -21,10 +21,7 @@
 		wchar_t* chrURL = &strURL[0];
 		URLDownloadToFile(0, chrURL, FileName, 0, 0);
 	}
-	std::wstring Picture::fullStr(std::wstring symbol, double x, double y, std::wstring str, std::wstring sstr)											//добавляет подстроку 
-	{
-		return Url.substr(0, Url.find(symbol)) + sstr + Url.substr(Url.find(symbol) + 1, Url.length() - Url.find(L"*") - 1);
-	}
+	
 	Picture::Picture(std::wstring getUrl, wchar_t* getWay)
 	{
 		Url = getUrl;
@@ -32,7 +29,7 @@
 	}
 	void Picture::Download(double x, double y)//откуда-куда(кодировка юникод)
 	{
-		download(fullStr(L"#", x, y, Url, std::to_wstring(x) + L"," + std::to_wstring(y)));
+		download(fullStr(L"#", Url, std::to_wstring(x) + L"," + std::to_wstring(y)));
 		translate();
 	}
 
@@ -58,7 +55,7 @@
 
 	void Picture::Save(std::wstring fname, double x, double y)
 	{
-		fname = fname.substr(0, fname.find(L"#")) + std::to_wstring(x) + L"," + std::to_wstring(y) + fname.substr(fname.find(L"*") + 1, fname.length() - fname.find(L"*") - 1);
+		fname = fullStr(L"#", fname, std::to_wstring(x));
 		assert(!fname.empty());
 		wchar_t* Newfname = &fname[0];
 		CLSID jpgClsid;
@@ -91,4 +88,11 @@
 	{
 		delete[] image;
 	}
-
+	Gdi::Gdi()
+	{
+		Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+	}
+	void Gdi::stop()
+	{
+		GdiplusShutdown(gdiplusToken);
+	}

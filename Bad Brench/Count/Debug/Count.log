@@ -1,5 +1,0 @@
-﻿  stdafx.cpp
-c:\users\имя\gits\greenproject\bad brench\count\stdafx.cpp(5): fatal error C1083: Не удается открыть файл предкомпилированный заголовок: Debug\Count.pch: No such file or directory,
-  Count.cpp
-c:\users\имя\gits\greenproject\bad brench\count\count.cpp(1): fatal error C1083: Не удается открыть файл предкомпилированный заголовок: Debug\Count.pch: No such file or directory,
-  Создание кода...

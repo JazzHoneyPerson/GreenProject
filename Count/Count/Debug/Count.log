@@ -1,2 +1,3 @@
-﻿  Picture.cpp
-c:\users\имя\gits\greenproject\count\count\picture.cpp(95): fatal error C1010: непредвиденный конец файла во время поиска предкомпилированного заголовка. Возможно, вы забыли добавить директиву "#include "stdafx.h"" в источник.
+﻿  Count.cpp
+c:\users\имя\gits\greenproject\count\count\count.cpp(96): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Count.vcxproj -> C:\Users\Имя\gits\GreenProject\Count\Debug\Count.exe

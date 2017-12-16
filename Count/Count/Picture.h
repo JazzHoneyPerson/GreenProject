@@ -1,17 +1,18 @@
 #include "stdafx.h"
 #include "Color.h"
+#include "wstringfunc.h"
 #include <windows.h> 
+#include <assert.h>
 #include <stdio.h>
 #include <gdiplus.h> //библиотека для обработки изображения
 #include<iostream>
 #include <cstdlib>
-#include <fstream>
 #include <vector>
 #include <math.h>
-#include <assert.h>
 #include <time.h>
 #include <urlmon.h> //import URLDownLoadToFile
 #include <string>
+
 #pragma comment (lib,"Gdiplus.lib")
 #pragma comment (lib, "urlmon.lib")
 
@@ -23,7 +24,13 @@ using namespace Gdiplus;
 
 //using namespace std;
 /*using namespace Gdiplus*/
-
+struct Gdi
+{
+	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+	ULONG_PTR gdiplusToken;
+	Gdi();
+	void stop();
+};
 class Picture//работа с изображением, структура класса
 {
 private:
@@ -36,7 +43,7 @@ private:
 	wchar_t* FileName;
 	void translate();
 	void download(std::wstring strURL);
-	std::wstring fullStr(std::wstring symbol, double x, double y, std::wstring str, std::wstring sstr);											//добавляет подстроку 
+
 
 public:
 	Picture(std::wstring getUrl, wchar_t* getWay);
