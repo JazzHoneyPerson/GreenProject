@@ -1,16 +1,7 @@
 #include "stdafx.h"
-#include "Picture.h"
-#include <gdiplus.h> 
-#include<iostream>
-#include <vector>
-#include <string>
-#include <windows.h> 
-#include "Color.h"
-#include <urlmon.h> 
-#include <cstdlib>
-#include <assert.h>
-#pragma comment (lib,"Gdiplus.lib")
-#pragma comment (lib, "urlmon.lib")
+#include "picture.h"
+
+
 
 
 	void Picture::translate()

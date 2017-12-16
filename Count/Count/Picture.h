@@ -1,14 +1,17 @@
 #include "stdafx.h"
-#include <cstdlib>
-#include <gdiplus.h> 
-#include<iostream>
-#include <vector>
-#include <string>
-#include <windows.h> 
 #include "Color.h"
-#include <urlmon.h> 
+#include <windows.h> 
+#include <stdio.h>
+#include <gdiplus.h> //библиотека для обработки изображения
+#include<iostream>
 #include <cstdlib>
+#include <fstream>
+#include <vector>
+#include <math.h>
 #include <assert.h>
+#include <time.h>
+#include <urlmon.h> //import URLDownLoadToFile
+#include <string>
 #pragma comment (lib,"Gdiplus.lib")
 #pragma comment (lib, "urlmon.lib")
 
@@ -34,8 +37,8 @@ private:
 	void translate();
 	void download(std::wstring strURL);
 	std::wstring fullStr(std::wstring symbol, double x, double y, std::wstring str, std::wstring sstr);											//добавляет подстроку 
-public:
 
+public:
 	Picture(std::wstring getUrl, wchar_t* getWay);
 	void Download(double x, double y);//откуда-куда(кодировка юникод)
 
