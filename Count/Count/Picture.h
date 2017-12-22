@@ -39,6 +39,7 @@ private:
 	Bitmap* image; //картинка, как объект
 	UINT SizeCol;		//длина
 	UINT SizeRow;		//ширина
+	std::wstring points=L"";
 	std::wstring Url;
 	wchar_t* FileName;
 	void translate();

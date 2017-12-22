@@ -1,3 +1,2 @@
-﻿  Count.cpp
-c:\users\имя\gits\greenproject\count\count\count.cpp(96): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+﻿  Picture.cpp
   Count.vcxproj -> C:\Users\Имя\gits\GreenProject\Count\Debug\Count.exe

@@ -29,8 +29,10 @@
 	}
 	void Picture::Download(double x, double y)//откуда-куда(кодировка юникод)
 	{
+		std::wstring str = fullStr(L"#", Url, std::to_wstring(x) + L"," + std::to_wstring(y));
 		download(fullStr(L"#", Url, std::to_wstring(x) + L"," + std::to_wstring(y)));
 		translate();
+
 	}
 
 	MyColor Picture::getColor(int x, int y)//получаем массив rgb с помощью обращения к getColor
@@ -64,22 +66,24 @@
 	}
 	void Picture::Draw()
 	{
-		/*HDC hdc = CreateCompatibleDC(NULL);
+		/*Url=fullStr(L"*", Url, points);*/
+		HDC hdc = CreateCompatibleDC(NULL);
 		Gdiplus::Graphics graphics(hdc);
 		BitmapData bitmapData;
 		bitmapData.Width = 256,
-		bitmapData.Height = 256,
-		bitmapData.Stride = 2 * bitmapData.Width;
+			bitmapData.Height = 256,
+			bitmapData.Stride = 2 * bitmapData.Width;
 		bitmapData.Scan0 = (VOID*)Mask;
 		bitmapData.Reserved = NULL;
 		graphics.DrawImage(image, 0, 0);
 		Rect rect(0, 0, 255, 255);
 		image->LockBits(&rect, ImageLockModeWrite | ImageLockModeUserInputBuf, image->GetPixelFormat(), &bitmapData);
 		image->UnlockBits(&bitmapData);
-		graphics.DrawImage(image, 0, 0);*/
+		graphics.DrawImage(image, 0, 0);
 	}
 	void Picture::setColor(int x, int y, MyColor Color)
 	{
+		/*points += (L"&pl=c:00ff00,"+std::to_wstring(x) + L"," + std::to_wstring(y) + L","+ std::to_wstring(x) + L"," + std::to_wstring(y));*/
 		Mask[3 * x + 3 * 256 * y] = Color.R;
 		Mask[3 * x + 3 * 256 * y + 1] = Color.G;
 		Mask[3 * x + 3 * 256 * y + 2] = Color.B;
