@@ -61,7 +61,7 @@ void Picture::Draw(int some)
 	bitmapData.Scan0 = (VOID*)Mask;
 	bitmapData.Reserved = NULL;
 	graphics.DrawImage(image, 0, 0);
-	Rect rect(0, 0+some, 255, 255+some);
+	Rect rect(0, 0+some, 255, 255);
 	image->LockBits(&rect, ImageLockModeWrite | ImageLockModeUserInputBuf, image->GetPixelFormat(), &bitmapData);
 	image->UnlockBits(&bitmapData);
 	graphics.DrawImage(image, 0, 0);
