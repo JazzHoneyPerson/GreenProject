@@ -24,18 +24,18 @@ Coordinates=np.array([56.854886, 60.573581,56.812489, 60.648804])
 
 
 step=0.000488
-x=-1
-for Lat in np.arange(Coordinates[1],  Coordinates[3], step):
+x=28
+for Lat in np.arange(Coordinates[1]+29*step,  Coordinates[3], step):
     x+=1
-    y=-1
-    for Long in np.arange(Coordinates[0], Coordinates[2],-step):
+    y=59
+    for Long in np.arange(Coordinates[0]-60*step, Coordinates[2],-step):
         y+=1
         LatLong=str(Long)+","+str(Lat)
         sputnik=download("https://maps.googleapis.com/maps/api/staticmap?center="+LatLong+"&zoom=19&format=png32&size=640x640&maptype=satellite&key=AIzaSyBd7DMOTTilre43iTilXMGru34D15yHxO4", "sputnik.png")
         #interface=download("https://maps.googleapis.com/maps/api/staticmap?size=640x640&zoom=19&center="+LatLong+"&style=feature:all|element:labels|visibility:off&format=png32&style=feature:all|element:geometry.fill|color:0xffffff&style=feature:all|element:geometry.stroke|color:0x000000&style=feature:road|color:0x857b7b&style=feature:water|color:11689eb&key=AIzaSyBd7DMOTTilre43iTilXMGru34D15yHxO4","interface.png")
         #map=download("https://maps.googleapis.com/maps/api/staticmap?center="+LatLong+"&zoom=19&size=640x640&style=feature:all|element:labels|visibility:off&format=png32&key=AIzaSyBd7DMOTTilre43iTilXMGru34D15yHxO4","map.png")
         pixS=sputnik.load()
-        pixM=map.load()
+        #pixM=map.load()
         draw = ImageDraw.Draw(sputnik)
         for i in range(182):
 	            for j in range(332):
