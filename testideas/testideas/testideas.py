@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import googlemaps
+>>>>>>> 824962397cca43d4115a4776e7a820fee3176490
 import urllib.request
 import numpy as np
 import math
@@ -23,11 +27,19 @@ Coordinates=np.array([56.854886, 60.573581,56.812489, 60.648804])
 
 
 step=0.000488
+<<<<<<< HEAD
 x=-1
 for Lat in np.arange(Coordinates[1],  Coordinates[3], step):
     x+=1
     y=-1
     for Long in np.arange(Coordinates[0], Coordinates[2],-step):
+=======
+x=28
+for Lat in np.arange(Coordinates[1]+29*step,  Coordinates[3], step):
+    x+=1
+    y=59
+    for Long in np.arange(Coordinates[0]-60*step, Coordinates[2],-step):
+>>>>>>> 824962397cca43d4115a4776e7a820fee3176490
         y+=1
         LatLong=str(Long)+","+str(Lat)
         sputnik=download("https://maps.googleapis.com/maps/api/staticmap?center="+LatLong+"&zoom=19&format=png32&size=640x640&maptype=satellite&key=AIzaSyBd7DMOTTilre43iTilXMGru34D15yHxO4", "sputnik.png")
